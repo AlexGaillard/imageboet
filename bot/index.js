@@ -23,7 +23,7 @@ client.on("messageCreate", async (message) => {
         "Howzit mah china?! I'm currently running and working correctly"
       );
     } else {
-      message.reply(`Fetching your request for ${prompt}`);
+      message.reply(`Lukka boet, lemme fetch your request for ${prompt}`);
       try {
         const { data } = await request(
           "http://localhost:5000/openai/generateimage",
