@@ -1,6 +1,7 @@
 const { Client, GatewayIntentBits } = require("discord.js");
 const { request } = require("axios");
 const { botReplies, botPrompt } = require("./messaging.js");
+const port = process.env.PORT || 5000;
 require("dotenv/config");
 
 const client = new Client({
@@ -25,7 +26,7 @@ client.on("messageCreate", async (message) => {
       message.reply(`${botReplies.fetching} ${prompt}`);
       try {
         const { data } = await request(
-          "http://localhost:5000/openai/generateimage",
+          `http://localhost:${port}/openai/generateimage`,
           {
             method: "POST",
             headers: {
