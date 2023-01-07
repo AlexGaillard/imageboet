@@ -40,7 +40,8 @@ client.on("messageCreate", async (message) => {
         );
         message.reply(data.data);
       } catch (e) {
-        message.reply("Sorry there was an error :(");
+        console.log(e);
+        message.reply(`Ahh that's jutt: ${e.response.data.error}`);
       }
     }
   }
