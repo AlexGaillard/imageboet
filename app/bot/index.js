@@ -1,5 +1,6 @@
 const { Client, GatewayIntentBits } = require("discord.js");
 const { request } = require("axios");
+const { botReplies, botPrompt } = require("./messaging.js");
 require("dotenv/config");
 
 const client = new Client({
@@ -17,13 +18,11 @@ client.on("ready", () => {
 client.on("messageCreate", async (message) => {
   const firstSix = message.content.slice(0, 6);
   const prompt = message.content.slice(7, message.content.length);
-  if (firstSix === "howzit") {
+  if (firstSix === botPrompt) {
     if (prompt === "imageboet") {
-      message.reply(
-        "Howzit mah china?! I'm currently running and working correctly"
-      );
+      message.reply(botReplies.status);
     } else {
-      message.reply(`Lukka boet, lemme fetch your request for ${prompt}`);
+      message.reply(`${botReplies.fetching} ${prompt}`);
       try {
         const { data } = await request(
           "http://localhost:5000/openai/generateimage",
@@ -41,7 +40,7 @@ client.on("messageCreate", async (message) => {
         message.reply(data.data);
       } catch (e) {
         console.log(e);
-        message.reply(`Ahh that's jutt: ${e.response.data.error}`);
+        message.reply(`${botReplies.error} ${e.response.data.error}`);
       }
     }
   }
