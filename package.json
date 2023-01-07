@@ -2,10 +2,10 @@
   "name": "imageboet",
   "version": "1.1.0",
   "description": "A server and Discord bot for fetching requests with OpenAI DALL-E",
-  "main": "index.js",
+  "main": "./app/server/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon ./app/index.js"
+    "start": "nodemon ./app/server/index.js"
   },
   "repository": {
     "type": "git",
