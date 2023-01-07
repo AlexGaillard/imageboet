@@ -11,7 +11,7 @@ const client = new Client({
 });
 
 client.on("ready", () => {
-  console.log("The bot is ready");
+  console.log("imageBoet is ready");
 });
 
 client.on("messageCreate", async (message) => {

@@ -1,0 +1,34 @@
+{
+  "name": "imageboet",
+  "version": "1.1.0",
+  "description": "A server and Discord bot for fetching requests with OpenAI DALL-E",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./app/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexGaillard/imageboet.git"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "ai",
+    "dalle",
+    "openai"
+  ],
+  "author": "Alex Gaillard",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexGaillard/imageboet/issues"
+  },
+  "homepage": "https://github.com/AlexGaillard/imageboet#readme",
+  "dependencies": {
+    "axios": "^1.2.2",
+    "discord.js": "^14.7.1",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "openai": "^3.1.0"
+  }
+}
