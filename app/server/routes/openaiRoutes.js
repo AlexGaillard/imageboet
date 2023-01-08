@@ -4,4 +4,10 @@ const router = express.Router();
 
 router.post("/generateimage", generateImage);
 
+router.get("/", (req, res) => {
+  res.status(200).json({
+    success: true,
+  });
+});
+
 module.exports = router;
