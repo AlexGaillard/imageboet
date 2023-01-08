@@ -1,7 +1,7 @@
 const { Client, GatewayIntentBits } = require("discord.js");
 const { request } = require("axios");
 const { botReplies, botPrompt } = require("./messaging.js");
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3000;
 require("dotenv/config");
 
 const client = new Client({
