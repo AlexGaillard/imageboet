@@ -17,6 +17,7 @@ client.on("ready", () => {
 });
 
 client.on("messageCreate", async (message) => {
+  console.log("hit");
   const firstSix = message.content.slice(0, 6);
   const prompt = message.content.slice(7, message.content.length);
   if (firstSix === botPrompt) {
